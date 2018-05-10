@@ -15,7 +15,7 @@ app.config(['$routeProvider', function ($routeProvider) {
         controller: 'EntriesController as vm'
     })
     .when('/project_time', {
-        templateUrl: '/views/projects_time.view.html',
+        templateUrl: '/views/project_time.view.html',
         controller: 'TimeController as vm'
     })
         .otherwise({
