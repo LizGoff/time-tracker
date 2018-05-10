@@ -10,6 +10,14 @@ app.config(['$routeProvider', function ($routeProvider) {
         templateUrl: '/views/home.view.html',
         controller: 'HomeController as vm'
     })
+    .when('/project_entries', {
+        templateUrl: '/views/project_entries.view.html',
+        controller: 'EntriesController as vm'
+    })
+    .when('/project_time', {
+        templateUrl: '/views/projects_time.view.html',
+        controller: 'TimeController as vm'
+    })
         .otherwise({
         template: '<h1>404</h1>'
 
