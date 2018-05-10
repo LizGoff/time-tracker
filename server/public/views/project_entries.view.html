@@ -3,6 +3,7 @@
 </div>
 <div>{{vm.message}}</div>
 <div>
+    <form>
     <div id="text">Entry</div>
     <section>
         <table>
@@ -48,7 +49,7 @@
                 <div class="card-body">
                     <p class="card-title" ng-model="project_entries.guest">{{project_entries.guest}}</p>
                     <p class="card-text" ng-model="project_entries.items_completed">{{project_entries.items_completed}}</p>
-                    <p class="card-text" ng-model="project_entries.date">{{project_entries.date}}</p>
+                    <p class="card-text" ng-model="project_entries.date">{{project_entries.date | date: "MM-dd-yyyy"}}</p>
                     <p class="card-text" ng-model="project_entries.start_time">{{project_entries.start_time}}</p>
                     <p class="card-text" ng-model="project_entries.end_time">{{project_entries.end_time}}</p>
                     <a class="btn btn-primary" ng-click="vm.removeHero(hero)">Clean the Slate!</a>
@@ -56,5 +57,5 @@
             </div>
         </div>
     </div>
-    <form>
+</form>
 </div>

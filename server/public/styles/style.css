@@ -5,4 +5,5 @@ body {
 
 #photos {
     width: 180px;
+    box-shadow: 0px 10px 100px 0px 	#8B008B;
 }
