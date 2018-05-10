@@ -1,3 +1,8 @@
 body {
-    background: silver;
+    background: black;
+    color: white;
+}
+
+#photos {
+    width: 180px;
 }
