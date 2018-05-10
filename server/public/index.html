@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Time Keeper</title>
+
+<!-- css -->
+    <link href="bootstrap.css">
+    <link rel="stylesheet" href="styles/style.css">
+
+<!-- angular -->
+    <script src="vendors/angular/angular.min.js"></script>
+    <script src="vendors/angular-route/angular-route.min.js"></script>
+    <script src="vendors/angular-animate/angular-animate.min.js"></script>
+    <script src="vendors/angular-aria/angular-aria.min.js"></script>
+    <script src="vendors/angular-material/angular-material.min.js"></script>
+    <script src="vendors/angular-messages/angular-messages.min.js"></script>
+
+<!-- client.js -->
+    <script src="scripts/client.js"></script>
+
+<!-- controllers -->
+
+<script src="scripts/controllers/home.controller.js"></script>
+
+<!-- services -->
+
+
+</head>
+<body ng-app="TimeApp">
+    <h1>Time Keeper</h1>
+    <a class="nav-link" href="#!">Home</a>
+    <ng-view></ng-view>
+</body>
+</html>
