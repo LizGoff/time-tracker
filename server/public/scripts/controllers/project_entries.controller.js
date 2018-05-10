@@ -53,7 +53,7 @@ app.controller('EntriesController', ['$http', function ($http) {
         $http({
             method: 'DELETE',
             url: `/project_entries/${project_entries.id}`,
-            data: hero
+            data: project_entries
         }).then((response) => {
             self.enterNewEntry();
             console.log(response);

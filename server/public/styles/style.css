@@ -1,9 +1,20 @@
 body {
-    background: black;
-    color: white;
+width: 100%;
 }
 
 #photos {
     width: 180px;
-    box-shadow: 0px 10px 100px 0px 	#8B008B;
+    height: 80px;
+}
+
+#cardStyling {
+    margin: 20px;
+    padding: 10px;
+}
+
+#deleteButton {
+
+    height: 30px;
+    background: black;
+    color: white;
 }
