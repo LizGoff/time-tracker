@@ -38,6 +38,7 @@ app.controller('EntriesController', ['$http', function ($http) {
                 self.project_entries.date = '';
                 self.project_entries.start_time = '';
                 self.project_entries.end_time = '';
+                self.project_entries.total_hours = '';
                 self.project_entries.image_path = '';
                 console.log(response);
                 self.enterNewEntry();

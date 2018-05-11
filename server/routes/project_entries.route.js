@@ -19,8 +19,8 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     console.log('POST /project_entries', req.body);
     const project_entries = req.body;
-    const queryText = `INSERT INTO "project_entries" ("items_completed", "guest", "date", "start_time", "end_time", "image_path") VALUES ($1, $2, $3, $4, $5, $6)`;
-    pool.query(queryText, [project_entries.items_completed, project_entries.guest, project_entries.date, project_entries.start_time, project_entries.end_time, project_entries.image_path])
+    const queryText = `INSERT INTO "project_entries" ("items_completed", "guest", "date", "start_time", "end_time", "total_hours", "image_path") VALUES ($1, $2, $3, $4, $5, $6, $7)`;
+    pool.query(queryText, [project_entries.items_completed, project_entries.guest, project_entries.date, project_entries.start_time, project_entries.end_time, project_entries.total_hours, project_entries.image_path])
         .then(result => {
             res.sendStatus(201);
         })
