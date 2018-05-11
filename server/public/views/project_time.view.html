@@ -1,3 +1,47 @@
 <div>
     <h2>{{vm.message}}</h2>
+    <div id="text">Guest</div>
+    <section>
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <input id="enterStartDate" type="date" ng-model="vm.project_time.start_date" required>
+                    </td>
+                    <td>
+                        <input id="enterEndDate" type="date" ng-model="vm.project_time.end_date" required>
+                    </td>
+                    <td>
+                        <input id="enterGuest" type="text" ng-model="vm.project_time.guest" placeHolder="Guest" required>
+                    </td>
+                    <td>
+                        <input id="enterTotalTime" type="text" ng-model="vm.project_time.total_hours" placeHolder="Total Hours" required>
+                    </td>
+                    <td>
+                        <select ng-model="vm.project_time.image_path">
+                            <option value='top.lights.JPG'>Top Lights</option>
+                            <option value='right.lights.JPG'>Right Lights</option>
+                            <option value='left.lights.JPG'>Left Lights</option>
+                            <option value='lower.lights.JPG'>Lower Lights</option>
+                        </select>
+                    </td>
+                    <td>
+                        <button id="enterGuestIntoDatabase" ng-click="vm.postNewGuestToDom(vm.project_time)">Add</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <div class="card-deck " id="cardStyling">
+        <div class="card" ng-repeat="project_time in vm.project_time.list | orderBy: reverse:true" style="width: 18rem;">
+            <img class="card-img-top" id="photos" ng-src="/styles/images/{{vm.project_time.image_path}}" alt="Card image cap">
+            <div class="card-body">
+                <p class="card-title" ng-model="vm.project_time.guest">{{vm.project_time.guest}}</p>
+                <p class="card-text" ng-model="vm.project_time.start_date">{{vm.project_time.start_date | date: "MM-dd-yyyy"}}</p>
+                        <p class="card-text" ng-model="vm.project_time.end_date">{{vm.project_time.end_date | date: "MM-dd-yyyy"}}</p>
+                        <p class="card-text" ng-model="vm.project_time.total_hours">{{vm.project_time.total_hours}}</p>
+                <a class="btn btn-primary" id="deleteButton" ng-click="vm.removeGuest(project_time)">Clean the Slate!</a>
+            </div>
+        </div>
+    </div>
 </div>
