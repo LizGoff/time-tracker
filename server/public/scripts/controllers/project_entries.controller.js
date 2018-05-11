@@ -1,32 +1,39 @@
 app.controller('EntriesController', ['$http', function ($http) {
     console.log('EntriesController has been loaded');
-    
+
     var self = this;
-    self.message = "I am the Entries page!" 
+    self.message = "I am the Entries page!"
 
     self.project_entries = {
         list: []
     };
 
-// add new entry
+    self.doMath = function (total_hours) {
+        total_hours = (self.project_entries.start_time - self.project_entries.end_time);
+        self.project_entries.list.push(total_hours);
+        console.log(total_hours);
+    }
+    // add new entry
 
     self.enterNewEntry = function () {
+        self.doMath();
         $http({
             method: 'GET',
             url: '/project_entries',
         })
             .then((response) => {
                 console.log(response);
-                self.project_entries.list=response.data;
+                self.project_entries.list = response.data;
             })
             .catch((error) => {
                 console.log('error making project_entries get request', error);
             })
     };
 
-// post entry 
+    // post entry 
 
     self.postNewEntryToDom = function (entryToAddToDom) {
+
         $http({
             method: 'POST',
             url: '/project_entries',
@@ -48,7 +55,7 @@ app.controller('EntriesController', ['$http', function ($http) {
             });
     }
 
-// remove new entry
+    // remove new entry
 
     self.removeEntry = function (project_entries) {
         $http({
@@ -59,12 +66,12 @@ app.controller('EntriesController', ['$http', function ($http) {
             self.enterNewEntry();
             console.log(response);
         })
-        .catch((error) => {
-            console.log('error making delete request', error);
-            alert('Something went wrong! Check the server.');
-        });
+            .catch((error) => {
+                console.log('error making delete request', error);
+                alert('Something went wrong! Check the server.');
+            });
     }
-    
+
     // Load data
     self.enterNewEntry();
 
