@@ -1,19 +1,30 @@
 
 #home {
-    background: url('palmtrees.jpeg');
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background: url('/styles/images/palmtrees.jpeg') no-repeat;
 }
 
 #guest {
-    background: url('sea.jpeg');
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background: url('/styles/images/sea.jpeg') no-repeat;
 }
 
 #entry {
-    background: url('palm.jpeg');
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background: url('/styles/images/palm.jpeg') no-repeat;
 }
 
 #photos {
     width: 180px;
-
 }
 
 #cardStyling {
@@ -22,7 +33,6 @@
 }
 
 #deleteButton {
-
     height: 30px;
     background: black;
     color: white;
