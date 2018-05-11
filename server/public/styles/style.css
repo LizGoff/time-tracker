@@ -1,10 +1,19 @@
-body {
-width: 100%;
+
+#home {
+    background: url('palmtrees.jpeg');
+}
+
+#guest {
+    background: url('sea.jpeg');
+}
+
+#entry {
+    background: url('palm.jpeg');
 }
 
 #photos {
     width: 180px;
-    height: 80px;
+
 }
 
 #cardStyling {

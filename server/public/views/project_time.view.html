@@ -1,3 +1,5 @@
+<body id="guest">
+
 <div>
     <h2>{{vm.message}}</h2>
     <div id="text">Guest</div>
@@ -17,12 +19,12 @@
                     <td>
                         <input id="enterTotalTime" type="text" ng-model="vm.project_time.total_hours" placeHolder="Total Hours" required>
                     </td>
-                    <td>
+                    <td id="images">
                         <select ng-model="vm.project_time.image_path">
-                            <option value='top.lights.JPG'>Top Lights</option>
-                            <option value='right.lights.JPG'>Right Lights</option>
-                            <option value='left.lights.JPG'>Left Lights</option>
-                            <option value='lower.lights.JPG'>Lower Lights</option>
+                            <option value='palm.jpeg'>Palm</option>
+                            <option value='pots.jpg'>Forms</option>
+                            <option value='tile1.jpeg'>Tile 1</option>
+                            <option value='tile2.jpeg'>Tile 2</option>
                         </select>
                     </td>
                     <td>
@@ -45,3 +47,4 @@
         </div>
     </div>
 </div>
+</body>
