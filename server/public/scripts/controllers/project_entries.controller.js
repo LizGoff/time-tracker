@@ -8,15 +8,10 @@ app.controller('EntriesController', ['$http', function ($http) {
         list: []
     };
 
-    self.doMath = function (total_hours) {
-        total_hours = (self.project_entries.start_time - self.project_entries.end_time);
-        self.project_entries.list.push(total_hours);
-        console.log(total_hours);
-    }
+
     // add new entry
 
     self.enterNewEntry = function () {
-        self.doMath();
         $http({
             method: 'GET',
             url: '/project_entries',
@@ -33,7 +28,6 @@ app.controller('EntriesController', ['$http', function ($http) {
     // post entry 
 
     self.postNewEntryToDom = function (entryToAddToDom) {
-
         $http({
             method: 'POST',
             url: '/project_entries',
@@ -53,6 +47,7 @@ app.controller('EntriesController', ['$http', function ($http) {
             .catch((error) => {
                 console.log('error making request for post', error);
             });
+            self.doMath()
     }
 
     // remove new entry
@@ -72,7 +67,13 @@ app.controller('EntriesController', ['$http', function ($http) {
             });
     }
 
+    self.doMath = function (total_hours) {
+        var total_hours = (self.project_entries.start_time - self.project_entries.end_time);
+        self.project_entries.list.push(total_hours);
+        return total_hours;
+        console.log(total_hours)
+    }
+
     // Load data
     self.enterNewEntry();
-
 }]); //end EntryController
