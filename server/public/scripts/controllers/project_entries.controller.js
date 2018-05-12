@@ -4,14 +4,16 @@ app.controller('EntriesController', ['$http', function ($http) {
     var self = this;
     self.message = "I am the Entries page!"
 
+
+
     self.project_entries = {
         list: []
     };
 
-
     // add new entry
 
     self.enterNewEntry = function () {
+        self.doMath();
         $http({
             method: 'GET',
             url: '/project_entries',
@@ -24,6 +26,17 @@ app.controller('EntriesController', ['$http', function ($http) {
                 console.log('error making project_entries get request', error);
             })
     };
+
+        // start doMath
+        self.doMath = function (sum1, sum2) {
+            var sum1 = self.project_entries.start_time;
+            var sum2 = self.project_entries.end_time;
+            var total_hours = sum2-sum1;
+            self.project_entries.list.push(total_hours);
+            console.log(total_hours);
+        };
+        //end doMath
+    
 
     // post entry 
 
@@ -47,7 +60,7 @@ app.controller('EntriesController', ['$http', function ($http) {
             .catch((error) => {
                 console.log('error making request for post', error);
             });
-            self.doMath()
+
     }
 
     // remove new entry
@@ -65,13 +78,6 @@ app.controller('EntriesController', ['$http', function ($http) {
                 console.log('error making delete request', error);
                 alert('Something went wrong! Check the server.');
             });
-    }
-
-    self.doMath = function (total_hours) {
-        var total_hours = (self.project_entries.start_time - self.project_entries.end_time);
-        self.project_entries.list.push(total_hours);
-        return total_hours;
-        console.log(total_hours)
     }
 
     // Load data
