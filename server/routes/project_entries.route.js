@@ -3,18 +3,18 @@ var router = express.Router();
 var pool = require('../modules/time.database');
 
 router.get('/', (req, res) => {
-    console.log('GET /project_entries');
-    pool.query(`SELECT * FROM "project_entries";`)
-        .then((results) => {
-            res.send(results.rows);
-        })
+        console.log('GET /project_entries');
+        pool.query(`SELECT * FROM "project_entries";`)
+            .then((results) => {
+                res.send(results.rows);
+    })
         .catch((error) => {
             console.log('error with SQL GET in route', error);
             res.sendStatus(500)
         });
 });
 
- // end route GET 
+// end route GET 
 
 router.post('/', (req, res) => {
     console.log('POST /project_entries', req.body);
@@ -47,5 +47,7 @@ router.delete('/:id', (req, res) => {
 });
 
 // end delete
+
+
 
 module.exports = router;

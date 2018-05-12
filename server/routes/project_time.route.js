@@ -4,17 +4,18 @@ var pool = require('../modules/time.database');
 
 router.get('/', (req, res) => {
     console.log('GET /project_time');
-    pool.query(`SELECT * FROM "project_time";`)
-        .then((results) => {
-            res.send(results.rows);
-        })
+
+    const queryText = `SELECT * FROM "project_time";`;
+    pool.query(queryText).then(result => {
+        res.send(result.rows);
+    })
         .catch((error) => {
             console.log('error with SQL GET in route guest', error);
             res.sendStatus(500)
         });
 });
 
- // end route GET 
+// end route GET 
 
 router.post('/', (req, res) => {
     console.log('POST /project_time', req.body);

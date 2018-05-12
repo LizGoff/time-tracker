@@ -34,12 +34,6 @@
                             </select>
                         </td>
                         <td>
-                            <button id="doHackyMath" ng-click="vm.doMath(vm.project_entries.list)">Total Time</button>
-                        </td>
-                        <!-- <td>
-                            <input id="enterEndTime" ng-model="vm.project_entries.total_hours" placeHolder="Smile!" readonly>
-                        </td> -->
-                        <td>
                             <button id="enterEntryIntoDatabase" ng-click="vm.postNewEntryToDom(vm.project_entries)">Add</button>
                         </td>
                     </tr>
@@ -63,3 +57,6 @@
     </div>
 
 </div>
+
+<hr />
+<pre>{{ vm | json }}</pre>

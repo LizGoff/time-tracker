@@ -4,8 +4,6 @@ app.controller('EntriesController', ['$http', function ($http) {
     var self = this;
     self.message = "I am the Entries page!"
 
-
-
     self.project_entries = {
         list: []
     };
@@ -13,7 +11,7 @@ app.controller('EntriesController', ['$http', function ($http) {
     // add new entry
 
     self.enterNewEntry = function () {
-        self.doMath();
+
         $http({
             method: 'GET',
             url: '/project_entries',
@@ -27,20 +25,18 @@ app.controller('EntriesController', ['$http', function ($http) {
             })
     };
 
-        // start doMath
-        self.doMath = function (sum1, sum2) {
-            var sum1 = self.project_entries.start_time;
-            var sum2 = self.project_entries.end_time;
-            var total_hours = sum2-sum1;
-            self.project_entries.list.push(total_hours);
-            console.log(total_hours);
-        };
-        //end doMath
-    
+
 
     // post entry 
 
     self.postNewEntryToDom = function (entryToAddToDom) {
+        self.doMath = function () {
+            var sum1 = self.project_entries.start_time;
+            var sum2 = self.project_entries.end_time;
+            var taco = sum2 - sum1;
+            self.project_entries.total_hours = taco;
+        };
+        self.doMath();
         $http({
             method: 'POST',
             url: '/project_entries',

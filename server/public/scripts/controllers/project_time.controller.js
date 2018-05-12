@@ -23,7 +23,7 @@ app.controller('TimeController', ['$http', function ($http) {
                     console.log('error making project_time get request', error);
                 })
         };
-    
+     
     // post guest 
     
         self.postNewGuestToDom = function (guestToAddToDom) {
