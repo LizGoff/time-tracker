@@ -11,8 +11,8 @@
                             <input id="enterEntry" type="text" ng-model="vm.project_entries.items_completed" placeHolder="Code Accomplishment" required>
                         </td>
                         <td>
-                            <select ng-model="vm.project_entries.guest">
-                                <option value='Living Earth Creations Inc.'>Living Earth Creations Inc.</option>
+                            <select ng-model="vm.project_entries.project_id">
+                                <option ng-repeat="project_time in vm.project_time.list" ng-value="project_time.id">{{project_time.guest}}</option>
                             </select>
                             <!-- try the ng-repeat in the dropdown -->
                         </td>

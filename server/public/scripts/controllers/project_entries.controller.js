@@ -8,6 +8,28 @@ app.controller('EntriesController', ['$http', function ($http) {
         list: []
     };
 
+    self.project_time = {
+        list: []
+    };
+
+    // add new guest
+
+    self.enterNewGuest = function () {
+        $http({
+            method: 'GET',
+            url: '/project_time',
+        })
+            .then((response) => {
+                console.log(response);
+                self.project_time.list = response.data;
+            })
+            .catch((error) => {
+                console.log('error making project_time get request', error);
+            })
+    };
+
+
+
     // add new entry
 
     self.enterNewEntry = function () {
@@ -77,5 +99,6 @@ app.controller('EntriesController', ['$http', function ($http) {
     }
 
     // Load data
+    self.enterNewGuest();
     self.enterNewEntry();
 }]); //end EntryController
