@@ -56,7 +56,7 @@ app.controller('EntriesController', ['$http', function ($http) {
             console.log(self.project_entries.start_time);
             var sum1 = self.project_entries.start_time;
             var sum2 = self.project_entries.end_time;
-            var taco = sum1 + sum2;
+            var taco = sum2-sum1;
             self.project_entries.total_hours = taco;
         };
         self.doMath();
