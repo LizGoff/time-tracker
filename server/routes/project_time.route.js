@@ -20,8 +20,8 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     console.log('POST /project_time', req.body);
     const project_time = req.body;
-    const queryText = `INSERT INTO "project_time" ("guest", "start_date", "end_date", "total_hours", "image_path") VALUES ($1, $2, $3, $4, $5)`;
-    pool.query(queryText, [project_time.guest, project_time.start_date, project_time.end_date, project_time.total_hours, project_time.image_path])
+    const queryText = `INSERT INTO "project_time" ("guest", "start_date", "end_date", "total_project_hours", "image_path") VALUES ($1, $2, $3, $4, $5)`;
+    pool.query(queryText, [project_time.guest, project_time.start_date, project_time.end_date, project_time.total_project_hours, project_time.image_path])
         .then(result => {
             res.sendStatus(201);
         })

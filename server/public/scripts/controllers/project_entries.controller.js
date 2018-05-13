@@ -90,6 +90,7 @@ app.controller('EntriesController', ['$http', function ($http) {
             data: project_entries
         }).then((response) => {
             self.enterNewEntry();
+            self.enterNewGuest();
             console.log(response);
         })
             .catch((error) => {
