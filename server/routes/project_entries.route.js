@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
         });
 });
 
-// end route GET 
+// end route GET  
 
 router.post('/', (req, res) => {
     console.log('POST /project_entries', req.body);

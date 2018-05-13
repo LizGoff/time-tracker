@@ -26,10 +26,10 @@
                             <input id="enterDate" type="date" ng-model="vm.project_entries.date" required>
                         </td>
                         <td>
-                            <input id="enterStartTime" type="text" ng-model="vm.project_entries.start_time" placeHolder="Start Time" required>
+                            <input id="enterStartTime" type="number" ng-model="vm.project_entries.start_time" placeHolder="Start Time" required>
                         </td>
                         <td>
-                            <input id="enterEndTime" type="text" ng-model="vm.project_entries.end_time" placeHolder="End Time" required>
+                            <input id="enterEndTime" type="number" ng-model="vm.project_entries.end_time" placeHolder="End Time" required>
                         </td>
                         <td id="images">
                             <select ng-model="vm.project_entries.image_path">
@@ -53,8 +53,8 @@
                     <p class="card-title" ng-model="project_entries.guest">{{project_entries.guest}}</p>
                     <p class="card-text" ng-model="project_entries.items_completed">{{project_entries.items_completed}}</p>
                     <p class="card-text" ng-model="project_entries.date">{{project_entries.date | date: "MM-dd-yyyy"}}</p>
-                    <p class="card-text" ng-model="project_entries.start_time">{{project_entries.start_time}}</p>
-                    <p class="card-text" ng-model="project_entries.end_time">{{project_entries.end_time}}</p>
+                    <p class="card-text" ng-model="project_entries.start_time">{{project_entries.start_time | date: "HH:MI"}}</p>
+                    <p class="card-text" ng-model="project_entries.end_time">{{project_entries.end_time | date: "HH:MI"}}</p>
                     <p class="card-text" ng-model="project_entries.total_hours">{{project_entries.total_hours}}</p>
                     <a class="btn btn-primary" id="deleteButton" ng-click="vm.removeEntry(project_entries)">Clean the Slate!</a>
                 </div>
