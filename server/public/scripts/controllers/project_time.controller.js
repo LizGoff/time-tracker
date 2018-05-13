@@ -54,7 +54,7 @@ app.controller('TimeController', ['$http', function ($http) {
                 url: `/project_time/${project_time.id}`,
                 data: project_time
             }).then((response) => {
-                self.enterNewGuest();
+                // self.enterNewGuest();
                 console.log(response);
             })
             .catch((error) => {

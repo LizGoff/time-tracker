@@ -86,11 +86,11 @@ app.controller('EntriesController', ['$http', function ($http) {
     self.removeEntry = function (project_entries) {
         $http({
             method: 'DELETE',
-            url: `/project_entries/${project_entries.id}`,
+            url: `/project_entries/${project_entries.project_id}`,
             data: project_entries
         }).then((response) => {
             self.enterNewEntry();
-            self.enterNewGuest();
+            // self.enterNewGuest();
             console.log(response);
         })
             .catch((error) => {
@@ -98,6 +98,22 @@ app.controller('EntriesController', ['$http', function ($http) {
                 alert('Something went wrong! Check the server.');
             });
     }
+
+    // self.removeGuest = function (project_time) {
+    //     $http({
+    //         method: 'DELETE',
+    //         url: `/project_time/${project_time.}`,
+    //         data: project_time
+    //     }).then((response) => {
+    //         // self.enterNewGuest();
+    //         console.log(response);
+    //     })
+    //     .catch((error) => {
+    //         console.log('error making delete request guest', error);
+    //         alert('Something went wrong! Check the server.');
+    //     });
+    // }
+
 
     // Load data
     self.enterNewGuest();
