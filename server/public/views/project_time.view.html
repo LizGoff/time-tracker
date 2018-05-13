@@ -38,7 +38,7 @@
                 <p class="card-title" ng-model="project_time.guest">{{project_time.guest}}</p>
                 <p class="card-text" ng-model="project_time.start_date">{{project_time.start_date | date: "MM-dd-yyyy"}}</p>
                 <p class="card-text" ng-model="project_time.end_date">{{project_time.end_date | date: "MM-dd-yyyy"}}</p>
-                <p class="card-text" ng-model="project_time.total_hours">{{project_time.total_hours}}</p>
+                <p class="card-text" ng-model="project_time.total_project_hours">{{project_time.total_project_hours}}</p>
                 <a class="btn btn-primary" id="deleteButton" ng-click="vm.removeGuest(project_time)">Clean the Slate!</a>
             </div>
         </div>
