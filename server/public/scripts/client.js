@@ -1,6 +1,6 @@
 console.log('Hi!');
 
-var app = angular.module('TimeApp', ['ngRoute']);
+var app = angular.module('TimeApp', ['ngRoute', 'ngMaterial']);
 
 app.config(['$routeProvider', function ($routeProvider) {
     console.log('Route config loaded');

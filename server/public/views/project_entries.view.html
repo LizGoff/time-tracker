@@ -1,6 +1,5 @@
 <div id="entry">
-
-    <div id="entryPage">
+    <div>
         <!-- <h2>{{vm.message}}</h2> -->
         <span>Accomplishment</span>
         <span>Guest</span>
@@ -8,59 +7,49 @@
         <span>Start Time</span>
         <span>End Time</span>
         <span>Logo</span>
+    </div>
+    <div layout="row"></div>
+    <div layout="column">
+        <md-input-container id="enterEntry">
+            <label>Code Accomplishment</label>
+            <input type="text" ng-model="vm.project_entries.items_completed">
+        </md-input-container>
+    </div>
 
-        <section>
-            <table id="table">
-                <tbody>
-                    <tr>
-                        <td>
-                            <input id="enterEntry" type="text" ng-model="vm.project_entries.items_completed" placeHolder="Code Accomplishment" required>
-                        </td>
-                        <td>
-                            <select ng-model="vm.project_entries.project_id">
-                                <option ng-repeat="project_time in vm.project_time.list" ng-value="project_time.id">{{project_time.guest}}</option>
-                            </select>
-                            <!-- try the ng-repeat in the dropdown -->
-                        </td>
-                        <td>
-                            <input id="enterDate" type="date" ng-model="vm.project_entries.date" required>
-                        </td>
-                        <td>
-                            <input id="enterStartTime" type="text" ng-model="vm.project_entries.start_time" placeHolder="Start Time" required>
-                        </td>
-                        <td>
-                            <input id="enterEndTime" type="text" ng-model="vm.project_entries.end_time" placeHolder="End Time" required>
-                        </td>
-                        <td id="images">
-                            <select ng-model="vm.project_entries.image_path">
-                                <option value='palm.jpeg'>Palm</option>
-                                <option value='pots.jpg'>Forms</option>
-                                <option value='tile1.jpeg'>Tile 1</option>
-                                <option value='tile2.jpeg'>Tile 2</option>
-                            </select>
-                        </td>
-                        <td>
-                            <button id="enterEntryIntoDatabase" ng-click="vm.postNewEntryToDom(vm.project_entries)">Add</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-        <div class="card-deck " id="cardStyling">
-            <div class="card" ng-repeat="project_entries in vm.project_entries.list | orderBy: reverse:true" style="width: 18rem;">
-                <img class="card-img-top" id="photos" ng-src="/styles/images/{{project_entries.image_path}}" alt="Card image cap">
-                <div class="card-body">
-                    <p class="card-title" ng-model="project_entries.guest">{{project_entries.guest}}</p>
-                    <p class="card-text" ng-model="project_entries.items_completed">{{project_entries.items_completed}}</p>
-                    <p class="card-text" ng-model="project_entries.date">{{project_entries.date | date: "MM-dd-yyyy"}}</p>
-                    <p class="card-text" ng-model="project_entries.start_time">{{project_entries.start_time}}</p>
-                    <p class="card-text" ng-model="project_entries.end_time">{{project_entries.end_time}}</p>
-                    <p class="card-text" ng-model="project_entries.total_hours">{{project_entries.total_hours}}</p>
-                    <a class="btn btn-primary" id="deleteButton" ng-click="vm.removeEntry(project_entries)">Clean the Slate!</a>
-                </div>
+    <select ng-model="vm.project_entries.project_id">
+        <option ng-repeat="project_time in vm.project_time.list" ng-value="project_time.id">{{project_time.guest}}</option>
+    </select>
+
+    <input id="enterDate" type="date" ng-model="vm.project_entries.date" required>
+
+    <input id="enterStartTime" type="text" ng-model="vm.project_entries.start_time" placeHolder="Start Time" required>
+
+    <input id="enterEndTime" type="text" ng-model="vm.project_entries.end_time" placeHolder="End Time" required>
+
+
+    <select ng-model="vm.project_entries.image_path">
+        <option value='palm.jpeg'>Palm</option>
+        <option value='pots.jpg'>Forms</option>
+        <option value='tile1.jpeg'>Tile 1</option>
+        <option value='tile2.jpeg'>Tile 2</option>
+    </select>
+
+    <button id="enterEntryIntoDatabase" ng-click="vm.postNewEntryToDom(vm.project_entries)">Add</button>
+    <div class="card-deck " id="cardStyling">
+        <div class="card" ng-repeat="project_entries in vm.project_entries.list | orderBy: reverse:true" style="width: 18rem;">
+            <img class="card-img-top" id="photos" ng-src="/styles/images/{{project_entries.image_path}}" alt="Card image cap">
+            <div class="card-body">
+                <p class="card-title" ng-model="project_entries.guest">{{project_entries.guest}}</p>
+                <p class="card-text" ng-model="project_entries.items_completed">{{project_entries.items_completed}}</p>
+                <p class="card-text" ng-model="project_entries.date">{{project_entries.date | date: "MM-dd-yyyy"}}</p>
+                <p class="card-text" ng-model="project_entries.start_time">{{project_entries.start_time}}</p>
+                <p class="card-text" ng-model="project_entries.end_time">{{project_entries.end_time}}</p>
+                <p class="card-text" ng-model="project_entries.total_hours">{{project_entries.total_hours}}</p>
+                <a class="btn btn-primary" id="deleteButton" ng-click="vm.removeEntry(project_entries)">Clean the Slate!</a>
             </div>
         </div>
     </div>
+</div>
 
 </div>
 
